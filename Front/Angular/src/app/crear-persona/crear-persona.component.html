@@ -1,0 +1,49 @@
+<div class="container-fluid bg-danger py-5">
+    <h1 class="display-4 text-light">Nueva Persona</h1>
+</div>
+<br>
+<div class="container bg-light">
+    <form>
+        <!----------------------------------------------------------------->
+        <div class="row g-3">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <label for="txtNombre">Nombre</label>
+                <input type="text" [(ngModel)]="persona.nombre" class="form-control" id="txtNombre" name="nombre">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <label for="txtApellido">Apellido</label>
+                <input type="text" [(ngModel)]="persona.apellido" class="form-control" id="txtApellido" name="apellido">
+            </div>
+        </div>
+        <!----------------------------------------------------------------->
+        <div class="row g-3">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <label for="txtDni">DNI</label>
+                <input type="text" [(ngModel)]="persona.dni" class="form-control" id="txtDni" name="dni">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <label for="txtApellido">Sexo</label>
+                <select [(ngModel)]="persona.sexo" class="form-control form-control"  id="cmbSexo" name="cmbSexo">
+                    <option *ngFor="let item of listaSexos" value="{{item.resNombreSexo}}">{{item.resNombreSexo}}</option>
+                 </select>
+            </div>
+        </div>
+        <!----------------------------------------------------------------->
+        <div class="row g-3">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <label for="txtCalle">Calle</label>
+                <input type="text" [(ngModel)]="persona.calle" class="form-control" id="txtCalle" name="calle">
+            </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                <label for="txtNumero">Número</label>
+                <input type="text" [(ngModel)]="persona.numero" class="form-control" id="txtNumero" name="numero">
+            </div>
+        </div>
+        <!----------------------------------------------------------------->
+        <br><button class="btn btn-primary "(click)="CrearPersona()">Crear Persona</button><br>
+    </form>
+</div>
+
+
+
+        

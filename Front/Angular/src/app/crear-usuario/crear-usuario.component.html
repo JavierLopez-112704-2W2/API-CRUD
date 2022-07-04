@@ -1,0 +1,36 @@
+<div class="container-fluid bg-warning py-5">
+    <div class="container">
+        <h1 class="display-4">Nuevo Usuario</h1>
+        <p class="lead">Ingrese Usuario y Contraseña nuevos</p>
+    </div>
+</div>
+<div class="container py-5">
+    <form id="form-login">
+        <div class="form-row">
+            <div class="form-group col-md-4"> 
+                <label for="txtUsuario">Usuario</label>
+                <input type="text" [(ngModel)]="usuarioNuevo.nombre" class="form-control" id="txtUsuario" name="usuario">
+            </div>               
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="txtPassword">Password</label>
+                <input type="password" [(ngModel)]="usuarioNuevo.password" class="form-control" id="txtPassword" name="password">
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="cmbTipoUsuario">Tipo de Usuario</label> 
+                <select [(ngModel)]="usuarioNuevo.tipo" class="form-control form-control-sm"  id="cmbTipoUsuario" name="cmbTipoUsuario">
+                    <option [selected]="true" [disabled]="true">Seleccione Rol</option>
+                    <option  *ngFor="let item of listaRoles" value="{{item.resNombreRol}}">{{item.resNombreRol}}</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <button type="button" (click)="enviarUsuario()" class="btn btn-primary" id="btnRegistrar">Registrar</button>
+    </form>
+</div>
+
+
+

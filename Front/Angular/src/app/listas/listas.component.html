@@ -1,0 +1,42 @@
+<div class="container-fluid bg-dark py-5">
+  <h1 class="display-4 text-light">Listado de Personas</h1>
+  <button type="button"class="btn btn-success btn-xs"(click)="AgregarPersona()">Nueva Persona</button>
+</div>
+
+<div class="container fondo">
+    
+    <div class="row">
+      
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">DNI</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Sexo</th>
+                    <th scope="col">Acciones</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    
+                  <tr *ngFor="let item of listaPersonas">
+                    <td>{{item.r_Dni}}</td>
+                    <td>{{item.r_Nombre}}</td>
+                    <td>{{item.r_Apellido}}</td>
+                    <td>{{item.r_Sexo}}</td>
+                    <td><button type="button" 
+                                class="btn btn-primary btn-xs"
+                                (click)="EditarPersona(item.r_Id)">Editar</button></td>  
+                    <td><button type="button" 
+                                class="btn btn-danger btn-xs"
+                                (click)="EliminarPersona(item.r_Id)">X</button></td>            
+                  </tr>  
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
+<br><br>
+
